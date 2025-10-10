@@ -75,7 +75,7 @@ last_tty(void)
 }
 /*}}}  */
 /*{{{  get_path -- get a complete path name from command*/
-static char Path[512];
+static char Path[1024];
 static char start[512];
 
 char *
@@ -94,12 +94,12 @@ get_path(char *name)
   strcpy(start, getenv("PATH"));
   for (list = start; (next = strchr(list, ':')); list = next + 1) {
     *next = '\0';
-    sprintf(Path, "%s/%s", list, name);
+    snprintf(Path, sizeof(Path), "%s/%s", list, name);
     if (access(Path, X_OK) == 0)
       return Path;
   }
 
-  sprintf(Path, "%s/%s", list, name);
+  snprintf(Path, sizeof(Path), "%s/%s", list, name);
   if (list && access(Path, X_OK) == 0) {
     return Path;
   } else {
