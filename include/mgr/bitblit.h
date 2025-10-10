@@ -11,10 +11,10 @@
 #endif
 
 /* NULL bitmap data */
-#define NULL_DATA	((DATA *) 0)
+#define NULL_DATA	((DATA *) NULL)
 
 /* NULL bitmap pointer */
-#define BIT_NULL	((BITMAP *) 0)
+#define BIT_NULL	((BITMAP *) NULL)
 
 /* frame buffer */
 #define _SCREEN		1
