@@ -47,11 +47,13 @@ void bit_pixmap(BITMAP *map)
  *  General memory-to-memory rasterop
  */
 
-void bit_blit(dst, dx, dy, width, height, func, src, sx, sy)
+void bit_blit(BITMAP *dst, int dx, int dy, int width, int height, int func, BITMAP *src, int sx, int sy)
+#if 0
 int sx, sy, dx, dy;		/* properly clipped source and dest */
 int width, height;		/* rectangle to be transferred */
 BITMAP *src, *dst;		/* bit map pointers */
 int func;			/* rasterop function */
+#endif
 {
 	xdinfo *xds, *xdd;
 	int fg, bg, t;

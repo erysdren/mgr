@@ -11,10 +11,7 @@
 #include "bitmap.h"
 
 int
-bit_point(map, dx, dy, func)
-BITMAP *map;
-register int dx, dy;
-int func;
+bit_point(BITMAP *map, register int dx, register int dy, int func)
    {
 	xdinfo *xd;
 	int fg;
