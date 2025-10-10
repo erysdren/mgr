@@ -77,7 +77,6 @@ sub_event(
 {
   int sweep = 0;
   static int x, y;
-  char *get_id();
   int code; /* for text sweeping */
 
 #ifdef DEBUG

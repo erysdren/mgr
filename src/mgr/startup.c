@@ -233,7 +233,6 @@ void startup(char *name)
       }
 
       if (strcmp(*fields, "window") == 0 && count >= 5) {
-        char lastchar();
         struct font *fp;
 
         gotwindow = 1;

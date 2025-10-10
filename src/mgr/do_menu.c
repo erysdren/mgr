@@ -131,21 +131,20 @@ do_menu(
 /*}}}  */
 /*{{{  do_menus*/
 struct menu_result *
-    do_menus(screen, mouse, x, y, font, menu_list, menu, exit_code)
-        BITMAP *screen;         /* bitmap screen */
-int mouse;                      /* fd to get mouse coordinates */
-int x, y;                       /* where the menu goes on the screen */
-struct font *font;              /* font to use for menus */
-struct menu_state *menu_list[]; /* list of available menus */
-int menu;                       /* current menu number */
-int exit_code;                  /* valid exit codes */
+    do_menus(
+        BITMAP *screen,         /* bitmap screen */
+int mouse,                      /* fd to get mouse coordinates */
+int x, int y,                   /* where the menu goes on the screen */
+struct font *font,              /* font to use for menus */
+struct menu_state *menu_list[], /* list of available menus */
+int menu,                       /* current menu number */
+int exit_code)                  /* valid exit codes */
 {
   struct menu_state *state;   /* 'cookie' for menu system */
   struct menu_result *result; /* messages for nodes of menu tree chosen */
   int done = 0;               /* true if ok to backup a level */
   int first = 1;              /* true upon entry */
   int next;                   /* next menu # */
-  struct menu_result *add_result();
   const char *print_menu(int);
 
   /* set up menu, get menu 'cookie' */

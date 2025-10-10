@@ -71,7 +71,9 @@ struct menu_state {
   short flags;                /* menu flags */
 };
 
-struct menu_state *menu_setup();
-struct menu_state *menu_define();
-struct menu_state *menu_remove();
-struct menu_state *menu_copy();
+struct menu_state *menu_setup(struct menu_state *state, BITMAP *screen, int x,
+    int y, int start);
+struct menu_state *menu_define(struct font *font, const char *const list[], const char *const values[],
+    int max, int color);
+struct menu_state *menu_remove(struct menu_state *state);
+struct menu_state *menu_copy(struct menu_state *menu);

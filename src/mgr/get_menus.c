@@ -45,13 +45,13 @@
 
 /*{{{  put_str -- put a character string into a bitmap - only used for menus*/
 void
-    put_str(map, x, y, font, op, str)
-        BITMAP *map;
-int x;
-int y;
-struct font *font;
-int op;
-const char *str;
+    put_str(
+        BITMAP *map,
+int x,
+int y,
+struct font *font,
+int op,
+const char *str)
 {
   unsigned char c;
   int wide = font->head.wide;
@@ -149,10 +149,11 @@ menu_define(
 /*}}}  */
 /*{{{  menu_setup -- put the menu on the display*/
 struct menu_state *
-    menu_setup(state, screen, x, y, start) struct menu_state *state; /* existing menu state */
-BITMAP *screen;                                                      /* where to put the menu */
-int x, y;                                                            /* current offset of mouse on screen */
-int start;                                                           /* preselected item */
+    menu_setup(
+struct menu_state *state, /* existing menu state */
+BITMAP *screen,           /* where to put the menu */
+int x, int y,             /* current offset of mouse on screen */
+int start)                /* preselected item */
 {
   /* position the box on the screen */
 

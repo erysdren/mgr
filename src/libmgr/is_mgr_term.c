@@ -3,6 +3,7 @@
  */
 
 #include <string.h>
+#include <stdlib.h>
 
 #ifdef PROBE
 #include <stdio.h>
@@ -34,7 +35,7 @@ static char line[128];
 extern int
 is_mgr_term(void)
 {
-  char *t, *getenv();
+  char *t;
   int pred;
 
   t = getenv("TERM");

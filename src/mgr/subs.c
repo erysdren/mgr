@@ -600,7 +600,7 @@ void cursor_off(void)
 int systemcmd(const char *command)
 {
   int status, pid, w;
-  void (*istat)(), (*qstat)();
+  void (*istat)(int), (*qstat)(int);
 
   if (!command || *command == '\0')
     return (0);
