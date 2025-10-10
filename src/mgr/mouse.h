@@ -31,5 +31,6 @@ extern int mfd;
 
 int get_ms_event(struct ms_event *ev);
 void ms_init(int screen_w, int screen_h, const char *mouse_type);
+const char *ms_get_dev(void);
 
 #endif /* MOUSE_H */

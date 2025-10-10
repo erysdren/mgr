@@ -61,8 +61,8 @@
 /*{{{  variables*/
 static struct timeval set_poll = { (long)0, (long)POLL_INT };
 static struct timeval set_poll_save;
-static char *mouse_dev = MOUSE_DEV;
-static char *mouse_type = NULL;
+static const char *mouse_dev = NULL;
+static const char *mouse_type = NULL;
 BITMAP *pattern = &def_pattern;
 #ifdef MOVIE
 char *log_command = NULL; /* process to pipe logging info to */
@@ -362,8 +362,13 @@ int main(int argc, char **argv)
     font = open_font("");
   font->ident = 0;
   /*}}}  */
+  /*{{{  get the mouse device*/
+  if (!mouse_dev) {
+    mouse_dev = ms_get_dev();
+  }
+  /*}}}  */
   /*{{{  open the mouse*/
-  if ((mouse = open(mouse_dev, O_RDWR)) < 0) {
+  if (!mouse_dev || (mouse = open(mouse_dev, O_RDWR)) < 0) {
     perror("mgr: Can't find the mouse, or it is already in use.\n");
     exit(1);
   }

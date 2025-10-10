@@ -261,3 +261,10 @@ restart:
   buttonwas = ev->ev_butstate;
   return 0;
 }
+
+/* erysdren 2025-10-10 */
+const char *ms_get_dev(void)
+{
+	/* TODO: enumerate udev input devices on linux to find a mouse */
+	return MOUSE_DEV;
+}
