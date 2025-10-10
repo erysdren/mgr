@@ -4,11 +4,7 @@
 
 This is a windowing system from the 1980s that was developed at Bellcore.
 
-Further Reading:
-
-- [https://hack.org/~mc/mgr/](https://hack.org/~mc/mgr/)
-- [https://en.wikipedia.org/wiki/ManaGeR](https://en.wikipedia.org/wiki/ManaGeR)
-- [https://sau.homeip.net/](https://sau.homeip.net/)
+[Further reading at Wikipedia](https://en.wikipedia.org/wiki/ManaGeR).
 
 ## License
 
