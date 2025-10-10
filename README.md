@@ -12,6 +12,15 @@ Further Reading:
 
 ## License
 
+Additional credits for this fork:
+
+- [Stephen A. Uhler](https://sau.homeip.net/) (original author of MGR)
+- [Michael Cardell Widerkrantz](https://hack.org/~mc/mgr/) (for providing MGR 0.69 source code)
+- [Nina Kalinina](https://tech.lgbt/@nina_kali_nina/115340373015475265) (for inspiring this fork)
+- [Bruce Mitchener](https://github.com/ProgrammerArchaeology/bellcore-mgr) (for CMake port)
+- [Howard Chu](https://github.com/hyc/mgr/) (for X11 port)
+- [alex-arknetworx](https://github.com/alex-arknetworx/mgr) (for build instructions that worked)
+
 ```
                         Copyright (c) 1988 Bellcore
                             All Rights Reserved
