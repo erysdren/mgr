@@ -66,7 +66,6 @@ int add_entry(
     )
 {
   int index;
-  char *alloc(), *save_line();
   TABLE *list;
 
   index = HASH(name, size);

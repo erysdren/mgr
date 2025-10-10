@@ -4,6 +4,7 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 
 INCLUDE(AddCCompilerFlag)
 ADD_C_COMPILER_FLAG(-Wall)
+ADD_C_COMPILER_FLAG(-Wno-sequence-point) # FIXME: caused by hash() in hash.c
 
 # hash table size (for keywords)
 SET(BUCKETS 59)
