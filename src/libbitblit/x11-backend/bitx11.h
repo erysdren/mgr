@@ -6,6 +6,7 @@
  *       THE AUTHOR MAKES NO WARRANTY AND ACCEPTS NO LIABILITY FOR THIS PROGRAM.
  */
 #include <X11/Xlib.h>
+#include <X11/Xutil.h>
 
 typedef struct xinfo {
 	Display *d;
