@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <stdlib.h> 
 #include <stdio.h>
+#include <string.h>
 #include <mgr/mgr.h>
 
 #define SCREEN 0
@@ -27,7 +28,7 @@ static char *_quit = "\034";
 int x, y, w, firstw, h, firsth, d, i, j, k;
 int hsize, vsize;
 
-void cleanup()
+void cleanup(int)
 {
 	m_setcursor(0);
 	m_clear();
@@ -35,10 +36,10 @@ void cleanup()
 	exit(0);
 }
 
-void do_time()
+void do_time(void)
 {
-	struct tm *tme, *localtime();
-	long tmp, time();
+	struct tm *tme;
+	long tmp;
 	int hr, mn, mn1;
 
 	tmp = time(0);
@@ -68,13 +69,13 @@ void do_time()
 	m_bitcopyto(0, 0, w, h, 0, 0, SCREEN, SCRATCH); /* put on screen */
 }
 
-void clearit()
+void clearit(int)
 {
 	m_clear();
 	do_time();
 }
 
-void shapeit()
+void shapeit(void)
 {
 	int	border;
 
@@ -83,7 +84,7 @@ void shapeit()
 	m_shapewindow(x, y, w + 2*border, h + 2*border);
 }
 
-void panic()
+void panic(void)
 {
 	if( !firstw )
 		firstw = w;
@@ -97,8 +98,7 @@ void panic()
 	}
 }
 
-int main(argc,argv) 
-int argc; char **argv;
+int main(int argc, char **argv)
 {
 	char buf[101];
 
@@ -139,7 +139,7 @@ int argc; char **argv;
 	panic();
 	m_ttyreset();/* reset echo */
 	shapeit();
-	clearit();
+	clearit(-1);
 	while(1) {
 		m_flush();
 		do_time();
